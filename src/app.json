@@ -18,26 +18,26 @@
     "list": [{
         "text": "首页",
         "pagePath": "pages/index/main",
-        "iconPath": "static/tabs/icon_home@3x.png",
-        "selectedIconPath": "static/tabs/icon_home_active@3x.png"
+        "iconPath": "/static/tabs/icon_home@3x.png",
+        "selectedIconPath": "/static/tabs/icon_home_active@3x.png"
       },
       {
         "text": "分类",
         "pagePath": "pages/category/main",
-        "iconPath": "static/tabs/icon_category@3x.png",
-        "selectedIconPath": "static/tabs/icon_category_active@3x.png"
+        "iconPath": "/static/tabs/icon_category@3x.png",
+        "selectedIconPath": "/static/tabs/icon_category_active@3x.png"
       },
       {
         "text": "购物车",
         "pagePath": "pages/shoppingcar/main",
-        "iconPath": "static/tabs/icon_cart@3x.png",
-        "selectedIconPath": "static/tabs/icon_cart_active@3x.png"
+        "iconPath": "/static/tabs/icon_cart@3x.png",
+        "selectedIconPath": "/static/tabs/icon_cart_active@3x.png"
       },
       {
         "text": "我的",
         "pagePath": "pages/my/main",
-        "iconPath": "static/tabs/icon_user@3x.png",
-        "selectedIconPath": "static/tabs/icon_user_active@3x.png"
+        "iconPath": "/static/tabs/icon_user@3x.png",
+        "selectedIconPath": "/static/tabs/icon_user_active@3x.png"
       }
     ],
     "position": "bottom"

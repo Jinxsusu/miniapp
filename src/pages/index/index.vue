@@ -1,28 +1,29 @@
 <template>
   <div>
-  <search/>
+    <search />
     <!-- 焦点图(轮播图) -->
     <swiper
       class="banner"
       indicator-dots
-      indicator-color="rgba(0, 0, 0, .3)"
+      indicator-color="rgba(255, 255, 255, .6)"
+      indicator-active-color="#ffffff"
       autoplay
-      interval="2500"
+      interval="3000"
       circular
     >
       <swiper-item>
         <a href>
-          <img src="/static/uploads/banner1.png" />
+          <img src="https://jinxsusu.github.io/myapp/static/uploads/banner1.png" />
         </a>
       </swiper-item>
       <swiper-item>
         <a href>
-          <img src="/static/uploads/banner2.png" />
+          <img src="https://jinxsusu.github.io/myapp/static/uploads/banner2.png" />
         </a>
       </swiper-item>
       <swiper-item>
         <a href>
-          <img src="/static/uploads/banner3.png" />
+          <img src="https://jinxsusu.github.io/myapp/static/uploads/banner3.png" />
         </a>
       </swiper-item>
     </swiper>
@@ -31,16 +32,16 @@
     <!-- 主导航 -->
     <div class="navs">
       <a href>
-        <img src="/static/uploads/icon_index_nav_4@2x.png" />
+        <img src="https://jinxsusu.github.io/myapp/static/uploads/icon_index_nav_4@2x.png" />
       </a>
       <a href>
-        <img src="/static/uploads/icon_index_nav_3@2x.png" />
+        <img src="https://jinxsusu.github.io/myapp/static/uploads/icon_index_nav_3@2x.png" />
       </a>
       <a href>
-        <img src="/static/uploads/icon_index_nav_2@2x.png" />
+        <img src="https://jinxsusu.github.io/myapp/static/uploads/icon_index_nav_2@2x.png" />
       </a>
       <a href>
-        <img src="/static/uploads/icon_index_nav_1@2x.png" />
+        <img src="https://jinxsusu.github.io/myapp/static/uploads/icon_index_nav_1@2x.png" />
       </a>
     </div>
     <!-- /主导航 -->
@@ -50,72 +51,72 @@
       <div class="floor">
         <!-- 标题 -->
         <div class="title">
-          <img src="/static/uploads/pic_floor01_title.png" alt />
+          <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor01_title.png" alt />
         </div>
         <!-- 分类 -->
         <div class="items">
           <a href>
-            <img src="/static/uploads/pic_floor01_1@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor01_1@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor01_2@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor01_2@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor01_3@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor01_3@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor01_4@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor01_4@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor01_5@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor01_5@2x.png" alt />
           </a>
         </div>
       </div>
       <div class="floor">
         <!-- 标题 -->
         <div class="title">
-          <img src="/static/uploads/pic_floor02_title.png" alt />
+          <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor02_title.png" alt />
         </div>
         <!-- 分类 -->
         <div class="items">
           <a href>
-            <img src="/static/uploads/pic_floor02_1@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor02_1@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor02_2@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor02_2@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor02_3@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor02_3@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor02_4@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor02_4@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor02_5@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor02_5@2x.png" alt />
           </a>
         </div>
       </div>
       <div class="floor">
         <!-- 标题 -->
         <div class="title">
-          <img src="/static/uploads/pic_floor03_title.png" alt />
+          <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor03_title.png" alt />
         </div>
         <!-- 分类 -->
         <div class="items">
           <a href>
-            <img src="/static/uploads/pic_floor03_1@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor03_1@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor03_2@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor03_2@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor03_3@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor03_3@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor03_4@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor03_4@2x.png" alt />
           </a>
           <a href>
-            <img src="/static/uploads/pic_floor03_5@2x.png" alt />
+            <img src="https://jinxsusu.github.io/myapp/static/uploads/pic_floor03_5@2x.png" alt />
           </a>
         </div>
       </div>
@@ -143,7 +144,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
 // 焦点图
 .banner {
   height: 340rpx;
@@ -179,15 +179,14 @@ export default {
     a {
       float: left;
       margin-left: 10rpx;
-      margin-top: 10rpx;
+      //选中后两个
+      &:nth-last-child(-n + 2) {
+        margin-top: 10rpx;
+      }
       &:first-child {
         width: 232rpx;
         height: 386rpx;
         margin-left: 0;
-        //选中hou两个
-        // &:nth-last-child(-n + 2) {
-        //   margin-top: 10rpx;
-        // }
       }
       &:nth-child(2),
       &:nth-child(5) {

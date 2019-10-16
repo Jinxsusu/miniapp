@@ -1,10 +1,14 @@
 <template>
-  <div>我是购物车页面</div>
+  <div>   <search /></div>
 </template>
 
 <script>
+import search from '@/components/search'
 export default {
-
+  // 注册组件
+  components: {
+    search
+  }
 }
 </script>
 
