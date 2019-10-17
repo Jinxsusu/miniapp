@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <search />
+  <div :style="{height:windowHeight,overflow:'hidden'}">
+    <search @search="disableScroll" />
     <!-- 焦点图(轮播图) -->
     <swiper
       class="banner"
@@ -129,13 +129,20 @@
 import search from '@/components/search'
 export default {
   data () {
-    return {}
+    return {
+      // 一个盒子的默认值是auto
+      windowHeight: 'auto'
+    }
   },
   // 注册组件
   components: {
     search
   },
-  methods: {},
+  methods: {
+    disableScroll (ev) {
+      this.windowHeight = ev.windowHeight
+    }
+  },
 
   created () {
     // let app = getApp()
