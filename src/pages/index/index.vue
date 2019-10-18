@@ -117,6 +117,15 @@ export default {
   onPageScroll (ev) {
     this.scrollTop = ev.scrollTop
   },
+  // 监听用户点击页面内转发按钮
+  // （button 组件 open-type="share"）
+  // 或右上角菜单“转发”按钮的行为，并自定义转发内容。
+  onShareAppMessage () {
+    return {
+      title: '黄子韬热血少年',
+      path: '/pages/index/index'
+    }
+  },
   mounted () {
     this.getBannerList()
     this.getNavList()
