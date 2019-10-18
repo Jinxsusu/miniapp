@@ -1,6 +1,7 @@
 <template>
   <div>
     <search />
+    <bolck v-if="topCategoriesList.length">
     <!-- 分类页面 -->
     <div class="category">
       <!-- 顶级分类 -->
@@ -40,6 +41,7 @@
       <!--/ 二级分类 -->
     </div>
     <!--/ 分类页面 -->
+    </bolck>
   </div>
 </template>
 
