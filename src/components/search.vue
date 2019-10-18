@@ -26,11 +26,11 @@ export default {
       this.placeholder = '请输入您想要的商品'
       // 获得焦点时动态获取 屏幕的可用高度
       // 小程序api 基础上 使用的异步
-      const {windowHeight} = wx.getSystemInfoSync()
+      const { windowHeight } = wx.getSystemInfoSync()
       // console.log(windowHeight)
       // 触发父组件事件并传值
       this.$emit('search', {
-        windowHeight: windowHeight + 'px'
+        pageHeight: windowHeight
       })
     },
     cancelSearch () {
@@ -38,6 +38,9 @@ export default {
       this.focused = false
       // 移除占位符
       this.placeholder = ''
+      this.$emit('search', {
+        pageHeight: 'auto'
+      })
     }
   }
 }
@@ -94,8 +97,9 @@ export default {
     display: none;
     width: 100rpx;
     line-height: 60rpx;
-    text-align: right;
+    text-align: center;
     color: #333333;
+    font-size: 30rpx;
   }
   .content {
     position: absolute;
