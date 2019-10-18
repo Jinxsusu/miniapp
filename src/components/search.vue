@@ -65,7 +65,7 @@ export default {
       line-height: 32rpx;
       padding-left: 32rpx;
       transform: translate(20rpx, -50%);
-      background-image: url("https://jinxsusu.github.io/myapp/static/images/icon_search@2x.png");
+      background-image: url("https://ugo2.oss-cn-hangzhou.aliyuncs.com/images/icon_search%402x.png");
       background-size: auto 32rpx;
     }
     &::after {
@@ -79,7 +79,7 @@ export default {
       transform: translate(-50%, -50%);
       color: #bbbbbb;
       font-size: 24rpx;
-      background-image: url("https://jinxsusu.github.io/myapp/static/images/icon_search@2x.png");
+      background-image: url("https://ugo2.oss-cn-hangzhou.aliyuncs.com/images/icon_search%402x.png");
       background-repeat: no-repeat;
       background-size: auto 32rpx;
     }

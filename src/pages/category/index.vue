@@ -6,15 +6,8 @@
       <!-- 顶级分类 -->
       <ul class="sup">
         <scroll-view scroll-y>
-          <li class="active">大家电</li>
-          <li>热门推荐</li>
-          <li>海外购</li>
-          <li>苏宁房产</li>
-          <li>电脑办公</li>
-          <li>厨卫电器</li>
-          <li>食品酒水</li>
-          <li>居家生活</li>
-          <li>厨房电器</li>
+          <!-- <li class="active">大家电</li> -->
+          <li :class="{active :currentIndex===topIndex}" @click="getChildCategories(topIndex)" v-for="(top,topIndex) in topCategoriesList" :key="topIndex">{{top.cat_name}}</li>
         </scroll-view>
       </ul>
       <!-- /顶级分类 -->
@@ -25,125 +18,18 @@
           <img class="thumb" src="/static/uploads/category.png" />
           <!-- /封面图片 -->
           <!-- 二级分类子盒子 -->
-          <div class="children">
+          <div 
+          class="children" 
+          v-for="(child,childIndex) in childCategoriesList" 
+          :key="childIndex">
             <!-- 标题 -->
-            <div class="title">电视</div>
+            <div class="title">{{child.cat_name}}</div>
             <!-- /标题 -->
             <!-- 品牌 -->
             <div class="brands">
-              <navigator>
-                <img src="/static/uploads/brand_1.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_2.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_3.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_4.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_5.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_6.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_7.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_8.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-            </div>
-            <!-- /品牌 -->
-          </div>
-          <div class="children">
-            <!-- 标题 -->
-            <div class="title">电视</div>
-            <!-- /标题 -->
-            <!-- 品牌 -->
-            <div class="brands">
-              <navigator>
-                <img src="/static/uploads/brand_1.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_2.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_3.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_4.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_5.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_6.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_7.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_8.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-            </div>
-            <!-- /品牌 -->
-          </div>
-          <div class="children">
-            <!-- 标题 -->
-            <div class="title">电视</div>
-            <!-- /标题 -->
-            <!-- 品牌 -->
-            <div class="brands">
-              <navigator>
-                <img src="/static/uploads/brand_1.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_2.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_3.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_4.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_5.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_6.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_7.jpg" alt />
-                <span>曲面电视</span>
-              </navigator>
-              <navigator>
-                <img src="/static/uploads/brand_8.jpg" alt />
-                <span>曲面电视</span>
+              <navigator v-for="(product,productIndex) in child.children" :key="productIndex">
+                <img :src="product.cat_icon" alt />
+                <span>{{product.cat_name}}</span>
               </navigator>
             </div>
             <!-- /品牌 -->
@@ -159,7 +45,39 @@
 
 <script>
 import search from '@/components/search'
+// 引入接口方法
+import request from '@/utils/request'
 export default {
+  data () {
+    return {
+      topCategoriesList: [],
+      currentIndex: 0
+    }
+  },
+  computed: {
+    childCategoriesList () {
+      return (
+        this.topCategoriesList.length && this.topCategoriesList[this.currentIndex].children
+      )
+    }
+  },
+  methods: {
+    // 获取二级分类信息
+    getChildCategories (index) {
+      this.currentIndex = index
+    },
+    // 获取分类信息
+    async getTopCategoriesList () {
+      const { message } = await request({
+        url: 'api/public/v1/categories'
+      })
+      // console.log(message)
+      this.topCategoriesList = message
+    }
+  },
+  mounted () {
+    this.getTopCategoriesList()
+  },
   // 注册组件
   components: {
     search
@@ -183,7 +101,7 @@ scroll-view {
     background-color: #f4f4f4;
     li {
       height: 100rpx;
-      border: 1px solid #eeeeee;
+      border-bottom: 1px solid #eeeeee;
       color: #333333;
       font-size: 26rpx;
       line-height: 100rpx;
@@ -193,12 +111,8 @@ scroll-view {
       }
       &.active {
         position: relative;
-        height: 100rpx;
-        border: 1px solid #eeeeee;
         color: #ea4451;
-        font-size: 26rpx;
-        line-height: 100rpx;
-        text-align: center;
+        background-color: #fff;
 
         &::before {
           position: absolute;
